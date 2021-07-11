@@ -1,0 +1,20 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="show_sql">true</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="connection.url">jdbc:mysql://127.0.0.1:3306/webmvc</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">2016</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		
+		<!-- 设置批量尺寸   -->
+		<property name="hibernate.jdbc.batch_size">100</property>
+		<!-- 关闭二级缓存   -->
+		<property name="hibernate.cache.use_second_level_cache">false</property>
+		
+		<mapping resource="com/huida/domain/User.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>
